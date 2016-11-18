@@ -27,6 +27,7 @@
     "no-useless-escape": "off",
     "no-nested-ternary": "off",
     "no-unneeded-ternary": "off",
-    "prefer-template": "off"
+    "prefer-template": "off",
+    "no-cond-assign": "off"
   }
 }

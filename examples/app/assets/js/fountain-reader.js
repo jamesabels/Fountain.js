@@ -10,4 +10,8 @@ var file = fs.readFileSync('/Users/James/Fountain.js/samples/brick&steel.fountai
 // console.log(file);
 
 
-console.log(fountain.parse(file));
+// console.log(fountain.parse(file));
+
+fountain.parse(file, true, function(output) {
+  console.log(output.tokens);
+});

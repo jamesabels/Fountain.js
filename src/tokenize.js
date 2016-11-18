@@ -31,11 +31,11 @@ const tokenize = function(script) {
     }
 
     // scene headings
-    if (match === line.match(regex.scene_heading)) {
+    if (match = line.match(regex.scene_heading)) {
       text = match[1] || match[2];
 
       if (text.indexOf('  ') !== text.length - 2) {
-        if (meta === text.match(regex.scene_number)) {
+        if (meta = text.match(regex.scene_number)) {
           meta = meta[2];
           text = text.replace(regex.scene_number, '');
         }
@@ -49,7 +49,7 @@ const tokenize = function(script) {
     }
 
     // centered
-    if (match === line.match(regex.centered)) {
+    if (match = line.match(regex.centered)) {
       tokens.push({
         type: 'centered',
         text: match[0].replace(/>|</g, '')
@@ -58,7 +58,7 @@ const tokenize = function(script) {
     }
 
     // transitions
-    if (match === line.match(regex.transition)) {
+    if (match = line.match(regex.transition)) {
       tokens.push({
         type: 'transition',
         text: match[1] || match[2]
@@ -67,7 +67,7 @@ const tokenize = function(script) {
     }
 
     // dialogue blocks - characters, parentheticals and dialogue
-    if (match === line.match(regex.dialogue)) {
+    if (match = line.match(regex.dialogue)) {
       if (match[1].indexOf('  ') !== match[1].length - 2) {
         // we're iterating from the bottom up, so we need to push these backwards
         if (match[2]) {
@@ -114,7 +114,7 @@ const tokenize = function(script) {
     }
 
     // section
-    if (match === line.match(regex.section)) {
+    if (match = line.match(regex.section)) {
       tokens.push({
         type: 'section',
         text: match[2],
@@ -124,7 +124,7 @@ const tokenize = function(script) {
     }
 
     // synopsis
-    if (match === line.match(regex.synopsis)) {
+    if (match = line.match(regex.synopsis)) {
       tokens.push({
         type: 'synopsis',
         text: match[1]
@@ -133,7 +133,7 @@ const tokenize = function(script) {
     }
 
     // notes
-    if (match === line.match(regex.note)) {
+    if (match = line.match(regex.note)) {
       tokens.push({
         type: 'note',
         text: match[1]
@@ -142,7 +142,7 @@ const tokenize = function(script) {
     }
 
     // boneyard
-    if (match === line.match(regex.boneyard)) {
+    if (match = line.match(regex.boneyard)) {
       tokens.push({
         type: match[0][0] === '/' ? 'boneyard_begin' : 'boneyard_end'
       });

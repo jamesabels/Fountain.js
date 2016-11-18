@@ -13,5 +13,15 @@ var file = fs.readFileSync('/Users/James/Fountain.js/examples/node-test/test-scr
 // console.log(fountain.parse(file));
 
 fountain.parseJSON(file, true, function(output) {
-  console.log(output.script.scenes);
+  // console.log(output.script.scenes);
+
+  let jsonScript = JSON.stringify(output);
+
+  fs.writeFile('./tmp/script.json', jsonScript, function(err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log('The file was saved!');
+  });
 });
+

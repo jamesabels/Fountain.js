@@ -55,7 +55,7 @@
         case 'page_break': html.push('<hr />'); break;
         case 'line_break': html.push('<br />'); break;
 
-        default: console.log('Unexpected Token type', token.text);
+        default: console.log('Unexpected Token type', token.type, token.text);
       }
     }
 

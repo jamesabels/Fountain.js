@@ -1,10 +1,10 @@
-import Regex from './regex';
+import regex from './regex';
 
 const lexer = function(script) {
-  return script.replace(Regex.boneyard, '\n$1\n')
-    .replace(Regex.standardizer, '\n')
-    .replace(Regex.cleaner, '')
-    .replace(Regex.whitespacer, '');
+  return script.replace(regex.boneyard, '\n$1\n')
+    .replace(regex.standardizer, '\n')
+    .replace(regex.cleaner, '')
+    .replace(regex.whitespacer, '');
 };
 
 export default lexer;

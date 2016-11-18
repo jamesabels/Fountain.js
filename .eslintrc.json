@@ -28,6 +28,8 @@
     "no-nested-ternary": "off",
     "no-unneeded-ternary": "off",
     "prefer-template": "off",
-    "no-cond-assign": "off"
+    "no-cond-assign": "off",
+    "eqeqeq": "off",
+    "no-throw-literal": "off"
   }
 }
